@@ -2,6 +2,7 @@
 % Resume Owner
 % Author : ISHANSH LAL
 % Github : https://github.com/ishanshLal-tRED
+% URL    : lalishansh.github.io
 %------------------------
 % Resume Template
 % Author : Anubhav Singh
@@ -9,7 +10,7 @@
 % License : MIT
 %------------------------
 
-\documentclass[a4paper,20pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -20,6 +21,8 @@
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage{multirow}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -31,7 +34,7 @@
 \addtolength{\oddsidemargin}{-0.530in}
 \addtolength{\evensidemargin}{-0.375in}
 \addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.45in}
+\addtolength{\topmargin}{-.6in}
 \addtolength{\textheight}{1in}
 
 \urlstyle{rm}
@@ -67,7 +70,6 @@
     \end{tabular*}\vspace{-5pt}
 }
 
-
 \newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
 
 \renewcommand{\labelitemii}{$\circ$}
@@ -76,20 +78,22 @@
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\photo}[1]{\begin{tikzpicture}\clip (0,0) circle (1.1cm) node {\includegraphics[width=2.2cm]{#1}};\end{tikzpicture}}
 
 %-----------------------------
 %%%%%%  CV STARTS HERE  %%%%%%
 
 \begin{document}
 %----------HEADING-----------------
-\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{{\LARGE Ishansh Lal}} & Email: \href{mailto:}{lalishansh@gmail.com}\\
-  Graphics engineer - NPR Nerd - HPC enthusiast & Mobile:~~~+91-7805-89-0067 \\
-  \href{https://github.com/ishanshLal-tRED}{Github: ~~github.com/ishanshLal-tRED} \\
+\begin{tabular*}{\textwidth}{c l@{\extracolsep{\fill}}r}
+  \multirow{4}{*}{\photo{me-cropped}} \\
+   & \textbf{{\LARGE Ishansh Lal}} & Email:~~\href{mailto:}{lalishansh@gmail.com}\\
+   & Graphics engineer - NPR Nerd - HPC enthusiast & Mobile No.:~\href{tel:917805890067}{+91 7805 890 067}\\
+   & \href{https://github.com/ishanshLal-tRED}{Github: ~~github.com/ishanshLal-tRED} \\
 \end{tabular*}
-
+%\vspace{1pt}
 %-----------EDUCATION-----------------
-\section{~~Education}
+\section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
       {Jaypee Institute of Information Technology, Sector-62}{NOIDA, India}
@@ -100,12 +104,12 @@
 \vspace{-6pt}
 \section{Skills Summary}
 \begin{tabular}{p{0.17\textwidth}p{0.8\textwidth}}
-    \textbf{• Languages}&{C++ (11-20 with modules), GoLang, Python, powerShell, Bash, C\# scripting}\\
-    \textbf{• Technologies}&{Vulkan, OpenGL, \url{x86_64-Assembly (AVX, AVX-2)}, WinSock}\\
-    \textbf{• Tools}&{Visual Studio, CLion, Visual-Assist, ReSharper, Unity, Unreal Engine, Blender, CMake, Premake, Git, Github, Gitlab}\\
+    \textbf{• Languages}&{C++ (11-20 all core features), GoLang, Python, powerShell, Bash, C\# scripting}\\
+    \textbf{• Technologies}&{Vulkan, OpenGL, \url{x86_64-Assembly (AVX, AVX-2)}, Sockets (WinSock, Berkeley), oneAPI}\\
+    \textbf{• Tools}&{Visual Studio, CLion, Visual-Assist, ReSharper, Unity, Unreal Engine, Blender, Git, Github, Gitlab, CMake, Premake}\\
     \textbf{•\hspace{5pt}SoftTechnical\hspace{15pt}\textcolor{white}{!}\hspace{7pt}Skills}&{• Rendering/Graphics Pipeline • CPU Architecture • GPU Architecture • Engine Architecture • Familiarity with acceleration DS (Ex. LBVH) • 3D \& Vector Mathematics • GPGPU Programming • Windows Development (\& Win32 API) • Procedural Generation • Ray-Tracing Concepts • Image processing • Network Programming}\\
     \textbf{• Platforms}&{Windows, Linux, Arduino, Raspberry}\\
-    \textbf{• Soft Skills}&{• Patience to spend long time on particular problem when necessary • Self-Motivation • Problem-Solving • Superb Debugging skills •Positive Attitude • Self-Control • Taking-Responsibility •Adaptability}
+    \textbf{• Soft Skills}&{• Patience • Self-Motivation • Problem-Solving • Debugging skills • Positive Attitude • Self-Control • Adaptability}
 \end{tabular}
 %\hline
 \vspace{-2pt}
@@ -115,35 +119,39 @@
     {Graphics engineer Intern (Full-time)}{Oct 2021 - Apr 2022, 7 mos}
     \resumeItemListStart
         \resumeItem{Mesh refinement}
-          {Optimizing No. of vertices in captured in mesh then adding lost details to mesh using curvature of surrounding vertices. \textit{All multi-threaded and cached to memory, to make it real-time editable \& custom model format for faster subsequent loading times.}}
+          {Optimizing No. of vertices in captured in mesh then adding lost details to it using curvature of surrounding vertices. \textit{Multi-threaded and cached to memory, to make it real-time editable \& custom model format for faster subsequent loading times.}}
         \resumeItem{Camera calibration}
-          {Intrinsic and extrinsic parameter calculation for cameras that capture images for face reconstruction using printed AprilTags \textit{(In Python)}. then linking it with Face reconstruction.}
+          {Intrinsic-Extrinsic params estimation of cameras for face reconstruction with AprilTags.\textit{(Python)}}
         \resumeItem{Deploying scalable build systems}
-          {Added CMake (build system generator) and VcPkg support to multiple projects, made entire build process single step, automatic, cross platform including custom patches to VcPkg libraries, Qt deployment, fetching dependent code from servers, buliding and linking python executables and more for jenkins}
-        \resumeItem{Strong first steps of New major project}
-          {Qt deployment, MVP like project stucturing and was praised for the same}
+          {Added CMake and VcPkg support to multiple projects, for single step, automatic, cross platform build process including custom file-patching to libraries, Qt deployment, fetching dependencies from servers continuous integration ready.}
+        \resumeItem{Laying foundations for major project of company}
+          {MVP like project stucturing and was praised for the same}
         \resumeItem{Wand calibration for Motion Capturing}{with unreal engine generated synthetic dataset.}
+      \resumeItemListEnd
+    \resumeSubheading{Viga Entertainment Technologies}{Remote}
+    {Graphics engineer (Full-time)}{June 2022 - Aug 2022, 2+ mos}
+      \resumeItemListStart
+        \resumeItem{General}{Creating Documentation for products, maintainence, improving sections of various programs i've previously worked upon.}
       \resumeItemListEnd
 \resumeSubHeadingListEnd
 
 %-----------PROJECTS-----------------
-\vspace{-5pt}
+\vspace{-7pt}
 \section{Projects}
   \resumeSubHeadingListStart
     \resumeSubItem{OpenGL-TestSite}{(inherited-by: NutCracker) Research oriented, open source, OpenGL test framework for rapid prototyping of OpenGL. Tech: C++, Premake, Glad, GLFW, glm, DearImGui, spdlog, stb-image etc. }\hspace{26pt}{(May-Oct '21)}
-    \vspace{2pt}
-    \resumeSubItem{RayTracing-Tests (GPU-Accelerated)}{Based on Peter Sherley’s book series Ray-tracing in one weekend for ideas and features, heavily modified for GPGPU Programming deployed via OpenGL's Compute Shaders for real-time performance on an iGPU using OpenGl-TestSite for framework.}\hspace{265pt}{(Jun-Aug '21)}
-    \vspace{2pt}
+    \vspace{1pt}
+    \resumeSubItem{RayTracing-Tests (GPU-Accl)}{Based on Peter Sherley’s "Ray-tracing in one weekend" for ideas, modified for GPGPU Programming via OpenGL's Compute Shaders for real-time performance on an iGPU with OpenGl-TestSite.}\hspace{5pt}{(Jun-Aug '21)}
+    \vspace{1pt}
     \resumeSubItem{Autocorrect Implimetation GUI (funny name)}{Started as simple implementation of notepad like text editor with spell-checker, however later turned into full text editor (branched) using earlier versions of OpenGL-TestSite.}{(May-Aug '21)}
-    \vspace{2pt}
-    \resumeSubItem{NotPing OnlyPong}{First step to world of rasterized graphics, a simple pong game, with GUI, instruction, text, VFX, SFX, music, tons of customization, ester eggs etc. (all with no OOPs) Tech: C++, Win32 API for everything else.}\hspace{20pt}{(May '20)}
-    \vspace{2pt}
+    \vspace{1pt}
+    \resumeSubItem{NotPing OnlyPong}{First step to world of rasterized graphics, a simple pong game, with GUI, tutorials, VFX, SFX, music, ester eggs etc. Tech: C++, Win32 API.}\hspace{302pt}{(May '20)}
+    \vspace{1pt}
     \resumeSubItem{Bank Mangment System}{a BMS with interactive UI rendering from scratch.}\hspace{134pt}{(May '20)}
-    \vspace{2pt}
-    \resumeSubItem{Particle Swarm Optimization algoritm Visulization}{with interactive GUI rendering from scratch in vulkan}
-    \hspace{5pt}{(May '22)}
-    \vspace{2pt}
-    \resumeSubItem{NutCracker (work in progress, nascent stages)}{ReImagined from scratch, a multi platform framework (not just for tests) to support Vulkan, OpenGL and DirectX with inter API communication. Tech (currently): C++(20, modules), VulkanSDK, VcPkg for fmt, glm, glfw }\hspace{280pt}{(May-present '22)}
+    \vspace{1pt}
+    \resumeSubItem{Particle Swarm Optimization algoritm Visulization}{with interactive GUI rendering from scratch in vulkan}\hspace{5pt}{(May '22)}
+    \vspace{1pt}
+    \resumeSubItem{NutCracker (work in progress)}{ReImagined multi platform (test) framework to support Vulkan, OpenGL and DirectX with inter API communication using C++(20, modules) }\hspace{200pt}{(May-present '22)}
   \resumeSubHeadingListEnd
 \vspace{-5pt}
 %-----------Awards-----------------
@@ -151,7 +159,7 @@
 \begin{description}[font=$\bullet$]
 \item {Won Club µCR Microcontroller Based Systems and Robotics Hub event Eximietas, 2019 }
 \end{description}
-\vspace{-5pt}
+\vspace{-6pt}
 \section{Volunteer Experience}
   \resumeSubHeadingListStart
     \resumeSubheading
@@ -159,10 +167,10 @@
         {Helped out at NGOs, campaigns in interest of environment, blood donation, food distribution etc. }{} \\
     % \vspace{10pt}\textbf{\large{Community Experience}}
   \resumeSubHeadingListEnd
-
+\vspace{-6pt}
 \section{Courses undertaken}
 \begin{tabular}{p{0.33\textwidth}p{0.33\textwidth}p{0.33\textwidth}}
-    {C\# Unity Game Developer 2D, 3D}&{RPG Core Combat Creator}&{Procedural terrain by Holistic 3D}\\
+    {C\# Unity Developer 2D, 3D}&{RPG Core Combat Creator}&{Procedural terrain Generation}\\
     {Game Engines (Hazel, Kohi)}&{Games with go}&{Go Bootcamp, \textit{and many more}}\\
 \end{tabular}
 %\hline
