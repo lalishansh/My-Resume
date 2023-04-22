@@ -1,175 +1,270 @@
-%------------------------
-% Resume Owner
-% Author : ISHANSH LAL
-% Github : https://github.com/ishanshLal-tRED
-% URL    : lalishansh.github.io
-%------------------------
-% Resume Template
-% Author : Anubhav Singh
-% Github : https://github.com/xprilion
-% License : MIT
-%------------------------
-
-\documentclass[a4paper,10pt]{article}
-
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
-\usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
-\usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{tikz}
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1in, top=5mm, bottom=5mm, left=3mm, right=15mm]{geometry}
 \usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{makecell}
 
-\pagestyle{fancy}
-\fancyhf{} % clear all header and footer fields
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\renewcommand{\arraystretch}{1.2}
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.530in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.6in}
-\addtolength{\textheight}{1in}
+% Start: HELPERS
 
-\urlstyle{rm}
+\definecolor{arrow_color}{RGB}{0,110,204}
+\definecolor{lightgray}{RGB}{185,185,185}
 
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
+% a six pointed arrow pointing to the left
+\newcommand{\tzlarrow}{
+	(0,0) -- (0.2,0) -- (0.3,0.2) -- (0.2,0.4) -- (0,0.4) -- (0.1,0.2) -- cycle;
+}	
 
-% Sections formatting
-\titleformat{\section}{
-  \vspace{-10pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-6pt}]
-
-%-------------------------
-% Custom commands
-\newcommand{\resumeItem}[2]{
-  \item\small{
-    \textbf{#1}{: #2 \vspace{-2pt}}
-  }
+% include the left arrow into a tikz picture
+% param1: fill color
+\newcommand{\larrow}[1]{
+    \begin{tikzpicture}[scale=0.58]
+        \filldraw[fill=#1!100,draw=#1!100!black]  \tzlarrow
+    \end{tikzpicture}
 }
 
-\newcommand{\resumeItemWithoutTitle}[1]{
-  \item\small{
-    {\vspace{-2pt}}
-  }
+% a six pointed arrow pointing to the right
+\newcommand{\tzrarrow}{ 
+	(0,0.2) -- (0.1,0) -- (0.3,0) -- (0.2,0.2) -- (0.3,0.4) -- (0.1,0.4) -- cycle;
 }
 
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{#3} & \textit{#4} \\
-    \end{tabular*}\vspace{-5pt}
+% include the right arrow into a tikz picture
+% param1: fill color
+\newcommand{\rarrow}[1]{
+    \begin{tikzpicture}[scale=0.7]
+        \filldraw[fill=#1!100,draw=#1!100!black] \tzrarrow
+    \end{tikzpicture}
 }
 
-\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-3pt}}
+% start a CV section
+% param1: section name
+% param2: section content
+\newcommand{\cvsection}[2]{
+    \begin{minipage}[t]{\linewidth}
+        \colorbox{white}{
+            \makebox{
+                \hspace{-15pt}
+                \larrow{arrow_color} \hspace{-14pt} 
+                \larrow{arrow_color} \hspace{-14pt} 
+                \larrow{arrow_color} \Large{\textbf{#1}} 
+            }
+        }\\
+        #2
+    \end{minipage}
+}
 
-\renewcommand{\labelitemii}{$\circ$}
+% End: HELPERS
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
-\newcommand{\photo}[1]{\begin{tikzpicture}\clip (0,0) circle (1.1cm) node {\includegraphics[width=2.2cm]{#1}};\end{tikzpicture}}
+\newcommand{\sectionHeader}{
+    \begin{tikzpicture}[remember picture, overlay]
+        \fill[lightgray] (current page.north west) rectangle ++(\paperwidth, -26mm);
+    \end{tikzpicture}
+    \begin{tabularx}{\linewidth}{@{} l X c X r @{}}
+        \begin{tabular}[c]{ll}
+            {\LARGE\textbf{ISHANSH LAL}} \\
+            \vspace{1mm}
+            {\large Graphics Engineer}
+        \end{tabular}
+         & &
+        \begin{tabular}[c]{ll}
+            {\large \includegraphics[width=12px]{../phone_2.png}~~\href{tel:917805890067}{+91 7805 8900 67}\vspace{4px}} \\
+            {\large \includegraphics[width=12px]{../mail.png}~~\href{mailto:lalishansh@gmail.com}{lalishansh@gmail.com}\vspace{4px}} \\
+            {\large \includegraphics[width=12px]{../linkedin.png}~~\href{https://www.linkedin.com/in/ishansh-lal/}{linkedin.com/in/ishansh-lal}} \\
+        \end{tabular} 
+         & &
+        {~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~} \\
+    \end{tabularx}    
+    \begin{tikzpicture}[remember picture, overlay]
+        \hspace{\paperwidth}\hspace{-1in}
+        \clip (0,0) circle (1.25cm) node {\includegraphics[width=2.5cm]{../me-cropped.jpeg}};
+    \end{tikzpicture}
+}
+\newcommand{\sectionEducation}{
+    \cvsection{Education}{
+        \begin{tabularx}{0.85\linewidth}{@{} l X r @{}}
+            {Jaypee Institute of Information Technology, Sector-62} & & {NOIDA, India} \\
+            {Bachelor of Technology - C.S.E} & & {July 2019 - present}
+        \end{tabularx}
 
-%-----------------------------
-%%%%%%  CV STARTS HERE  %%%%%%
+        \scriptsize\textit{\footnotesize{\newline{}\textbf{Courses:} Operating System, Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases}}
+    }
+}
+\newcommand{\sectionAboutMe}{
+    \cvsection{About Me}{
+        \vspace{-9px}\\
+        As a passionate and dedicated \textbf{C++ Graphics Programmer}, I excel in delivering high-quality, outcome-oriented solutions by focusing on the process and maintaining a positive attitude. My strong problem-solving and superb debugging skills, coupled with patience and adaptability, enable me to tackle complex challenges. Committed to writing clean and maintainable code, I take responsibility for my work and continuously strive for self-improvement.
+    }
+}
+\newcommand{\sectionMainToolsAndTechnologies}{
+    \cvsection{Tools And Tech.}{
+        \includegraphics[height=30px]{../C++20_Logo.png}
+        \includegraphics[height=26px]{../x86_64.png}
+        \includegraphics[height=24px]{../python.png}
+        \includegraphics[height=22px]{../golang.png}
+        \includegraphics[height=22px]{../c-sharp.png}
+        \includegraphics[height=24px]{../PowerShell.png}
+        \includegraphics[height=22px]{../Bash.png} \\
+        \includegraphics[height=26px]{../Vulkan.png}
+        \includegraphics[height=24px]{../OpenGL.png} \\
+        \includegraphics[height=18px]{../git.png}
+        \includegraphics[height=18px]{../CMake.png}
+        \includegraphics[height=18px]{../clion.png}
+    }
+}
+\newcommand{\sectionOtherToolsAndTechnologies}{
+    \cvsection{Other Tools} {
+        \vspace{-9px}\\
+        \textbf{Visual Studio, Re-Sharper, Visual-Assist, Blender, Unity, Unreal-Engine}
+    }
+}
+\newcommand{\sectionSoftTechnicalSkills}{
+    \cvsection{Soft Technical Skills}{
+        \vspace{-17px}
+        \begin{itemize}
+            \setlength{\itemsep}{-1.33px}
+            \item {Rendering/Graphics Pipeline}
+            \item {CPU, GPU Architecture}
+            \item {Engine Architecture}
+            \item {Acceleration Data Structures}
+            \item {3D \& Vector Mathematics }
+            \item {GPGPU Programming}
+            \item {Procedural Generation}
+            \item {Ray-Tracing Concepts}
+            \item {Image processing}
+            \item {Network Programming}
+            \item {Android C++ Native}
+            \item {Prompt Engineerin}
+        \end{itemize}
+    }
+}
+
+\newcommand{\sectionExperience}{
+    \cvsection{Experience}{
+        \vspace{-.6cm}
+        \begin{enumerate}
+            \setlength{\itemindent}{-2px}
+            \item \textbf{Viga Entertainment Studios} \vspace{-.2cm}
+            \begin{enumerate}
+                \setlength{\itemindent}{-10px}
+                \item 
+                    \begin{tabularx}{\linewidth}{@{} l X r @{}}
+                        Graphics Engineer (Remote) & & (Feb 2023 - May 2023, 4 mos) \\ 
+                    \end{tabularx} \newline
+                    \hspace*{-10px}Conversion of video with depth data to 3D mesh / point-cloud for \\
+                    \hspace*{-10px}"volumetric streaming" between individuals using ZED cameras.
+                \item
+                    \begin{tabularx}{\linewidth}{@{} l X r @{}}
+                        Graphics Engineer (Remote) & & (June 2022 - Aug 2022, 2+ mos) \\ 
+                    \end{tabularx} \newline
+                    \hspace*{-13px} As part of the Core Team, \vspace{-4px}
+                    \begin{enumerate}
+                        \setlength{\itemindent}{-13px}
+                        \item Creating Documentation for products %like Scan Stage, Realtime Face Capture etc.
+                        \item Speeding up Face Capture for Real-time Applications.
+                        \item Code maintainence.
+                    \end{enumerate}
+                \item
+                    \begin{tabularx}{\linewidth}{@{} l X r @{}}
+                        Graphics Engineer Intern & & (Oct 2021 - Apr 2022, 7 mos) \\ 
+                    \end{tabularx} \newline
+                    \hspace*{-13px} Learned a lot as an Intern. \vspace{-4px}
+                    \begin{enumerate}
+                        \setlength{\itemindent}{-13px}
+                        \item \textbf{Mesh refinement~}{Optimizing No. of vertices in captured mesh then adding lost details using mean curvature. \textit{Multi-threading, real-time editable and disk caching.}}
+                        \item \textbf{Camera calibration~}{Intrinsic-Extrinsic parameter estimation of cameras for face reconstruction with AprilTags.\textit{(Python)}}
+                        \item \textbf{Deploying scalable build systems~}{CI/CD Ready, single step, cross platform build process with CMake, VcPkg, QT-5,6 support including a custom file-patcher for libraries and automatic dependencies resolution from servers.}
+                        \item \textbf{Project architecting~}{Planned architecture for "Scan Stage" and was praised for the same}
+                        \item \textbf{Wand calibration for Motion capturing~}{on synthetic dataset.}
+                    \end{enumerate}
+            \end{enumerate}
+        \end{enumerate}
+    }
+}
+\newcommand{\sectionProjects}{
+    \cvsection{Projects}{
+        \begin{tabularx}{\linewidth}{@{} l X c X r @{}}
+
+            \textbf{SETU Game-Engine (major)} & & {(July-Nov '22)} \\
+            \multicolumn{3}{l}{Cross-platform(Windows, Linux, Android) Modular engine in OpenGL \& C++} \\
+
+            \textbf{OpenGL-TestSite} & & {(May-Oct '21)} \\
+            \multicolumn{3}{l}{(see also: NutCracker) Framework for rapid prototyping of OpenGL in C++} \\
+
+            \textbf{NutCracker (WIP)} & & {(May-Till '22)} \\
+            \multicolumn{3}{l}{Multiplatform Framework for Vulkan, OpenGL, DirectX using C++Modules} \\
+
+            \textbf{Particle Swarm Optimization algorithm Visualization}  & & {(May '22)} \\
+            \multicolumn{3}{l}{with interactive GUI rendering from scratch in Vulkan} \\
+
+            \textbf{RayTracing-Tests (GPGPU-Accelerated)} & & {(Jun-Aug '21)} \\
+            \multicolumn{3}{l}{Based on Peter Sherley’s "Ray-tracing in one weekend" Series.} \\
+
+            \textbf{Scene perception for visually impaired (minor)} & & {(Apr '22)} \\
+            \multicolumn{3}{l}{Python based with object recognition, depth estimation and text-to-speech} \\
+
+            \textbf{Live depression detection on Tweets (minor)} & & {(Nov '21)} \\
+            \multicolumn{3}{l}{Python based with sentimental analysis, twitter APIv2, tkinter, torch} \\
+
+            \textbf{Bank Management System} & & {(May '21)} \\
+            \multicolumn{3}{l}{A BMS with interactive UI rendering from scratch.} \\
+
+            \textbf{NotPing-OnlyPong} & & {(Nov '20)} \\
+            \multicolumn{3}{l}{Pong game with rasterized graphics, GUI, in game tutorials, VFX, SFX,} \\
+            \multicolumn{3}{l}{music, ester eggs and more. Tech: C++, Win32.} \\
+        \end{tabularx} \newline
+    }
+}
+
+\newcommand{\sectionVolenteering}{
+    \cvsection{Volenteering}{
+        {NSS volunteer - Oct 2019-20} \\ {JIIT NOIDA, India} \\
+        {Helped out at NGOs, campaigns in interest of environment, blood donation, food distribution etc. }
+    }
+}
+
+\newcommand{\sectionAwards}{
+    \cvsection{Award(s)}{
+        \hspace*{10px}Won µCR, Microcontroller based System \& Robotics Hub event Eximietas, 2019 
+    }
+    \cvsection{Courses}{
+        \hspace*{10px}
+        \begin{tabularx}{\linewidth}{@{} l X r @{}}
+            {Sentimental Analysis}&{Game Engines(Hazel, Kohi)} \\ 
+            {Procedural terrain Generation} & {C\# Unity Developer 2D, 3D} \\
+            {Games with go}&{Go Bootcamp, \textit{and many more}}\\
+        \end{tabularx}
+    }
+}
+
+\newcommand{\sectionFooter}{
+    \hspace*{.65cm}\colorbox{cyan}{\begin{tabularx}{\linewidth}{@{} l X c X r @{}}
+        \thepage & & \textcolor{red}{\includegraphics[height=10px]{../web.png}~\href{https://lalishansh.github.io/about/}{lalishansh.github.io}} & & {\includegraphics[height=10px]{../github.png}~\href{https://github.com/lalishansh}{github.com/lalishansh}} \\
+    \end{tabularx}}
+}
 
 \begin{document}
-%----------HEADING-----------------
-\begin{tabular*}{\textwidth}{c l@{\extracolsep{\fill}}r}
-  \multirow{4}{*}{\photo{me-cropped}} \\
-   & \textbf{{\LARGE Ishansh Lal}} & Email:~~\href{mailto:}{lalishansh@gmail.com}\\
-   & Graphics engineer - NPR Nerd - HPC enthusiast & Mobile No.:~\href{tel:917805890067}{+91 7805 890 067}\\
-   & \href{https://github.com/ishanshLal-tRED}{Github: ~~github.com/ishanshLal-tRED} \\
-\end{tabular*}
-%\vspace{1pt}
-%-----------EDUCATION-----------------
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Jaypee Institute of Information Technology, Sector-62}{NOIDA, India}
-      {Bachelor of Technology - C.S.E}{July 2019 - present}
-      {\scriptsize \textit{ \footnotesize{\newline{}\textbf{Courses:} Operating System, Data Structures, Analysis Of Algorithms, Artificial Intelligence, Machine Learning, Networking, Databases}}}\\
-    \resumeSubHeadingListEnd
-%\hline
-\vspace{-6pt}
-\section{Skills Summary}
-\begin{tabular}{p{0.17\textwidth}p{0.8\textwidth}}
-    \textbf{• Languages}&{C/C++, Golang, Python, powerShell, Bash, C\# scripting}\\
-    \textbf{• Technologies}&{Vulkan, OpenGL, \url{x86_64-Assembly (AVX, AVX-2)}}\\
-    \textbf{• Tools}&{CLion, Visual Studio, ReSharper, Visual-Assist, Unity, Unreal Engine, Blender, Git, Github, Gitlab, CMake, Premake}\\
-    \textbf{•\hspace{5pt}SoftTechnical\hspace{15pt}\textcolor{white}{!}\hspace{7pt}Skills}&{• Rendering/Graphics Pipeline • CPU Architecture • GPU Architecture • Engine Architecture • Familiarity with acceleration DS (Ex. LBVH) • 3D \& Vector Mathematics • GPGPU Programming • Windows Development (\& Win32 API) • Procedural Generation • Ray-Tracing Concepts • Image processing • Network Programming • Android C++ Native}\\
-    \textbf{• Platforms}&{Windows, Linux, Arduino, Raspberry}\\
-    \textbf{• Soft Skills}&{• Patience • Self-Motivation • Problem-Solving • Debugging skills • Positive Attitude • Self-Control • Adaptability}
-\end{tabular}
-%\hline
-\vspace{-2pt}
-\section{Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading{Viga Entertainment Technologies}{Remote}
-    {Graphics engineer Intern (Full-time)}{Oct 2021 - Apr 2022, 7 mos}
-    \resumeItemListStart
-        \resumeItem{Mesh refinement}
-          {Optimizing No. of vertices in captured in mesh then adding lost details using curvature of vertices. \textit{Multi-threaded and cached, real-time editable \& custom model format for faster subsequent loading times.}}
-        \resumeItem{Camera calibration}
-          {Intrinsic-Extrinsic params estimation of cameras for face reconstruction with AprilTags.\textit{(Python)}}
-        \resumeItem{Deploying scalable build systems}
-          {Added CMake and VcPkg support to projects, for single step, cross platform build process including custom file-patcher for libraries, Qt deployment, resolving dependencies from servers, CICD ready.}
-        \resumeItem{Project architecturing}
-          {Planned architecture, foundations for a major project and was praised for the same}
-        \resumeItem{Wand calibration for Motion Capturing}{with unreal engine generated synthetic dataset.}
-      \resumeItemListEnd
-    \resumeSubheading{Viga Entertainment Technologies}{Remote}
-    {Graphics engineer (Full-time)}{June 2022 - Aug 2022, 2+ mos}
-      \resumeItemListStart
-        \resumeItem{General}{Creating Documentation for products, maintainence, improving sections of various programs i've previously worked upon (as part of the Core Team).}
-      \resumeItemListEnd
-\resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------------
-\vspace{-7pt}
-\section{Projects}
-  \resumeSubHeadingListStart
-  \resumeSubItem{SETU Game-Engine}{Cross-platform (Windows, Linux, Android), Modular engine with C++20, OpenGL}\hspace{15pt}{(2nd half '22)}
-  \resumeSubItem{OpenGL-TestSite}{(inherited-by: NutCracker) Research oriented, open source, OpenGL test framework for rapid prototyping of OpenGL. Tech: C++, Premake, Glad, GLFW, glm, DearImGui, spdlog, stb-image etc. }\hspace{25pt}{(May-Oct '21)}
-    \resumeSubItem{NutCracker (WIP)}{ReImagined multiplatform, to support Vulkan, OpenGL, DirectX using C++ modules}{(May-`Till '22)}
-    \resumeSubItem{Particle Swarm Optimization algoritm Visulization}{with interactive GUI rendering from scratch in vulkan}{(May '22)}
-    \resumeSubItem{RayTracing-Tests (GPU-Accl)}{Based on Peter Sherley’s "Ray-tracing in one weekend" for ideas, modified for GPGPU Programming via OpenGL's Compute Shaders, for real-time performance on iGPU.}\hspace{107pt}{(Jun-Aug '21)}
-    \resumeSubItem{Scene perception for visually impaired (minor)}{object recognition, depth estimation and text-to-speech}\hspace{16pt}{(Apr '22)}
-    \resumeSubItem{Depression detecion on Tweets: Live (minor)}{sentimental analysis, twitter APIv2, GUI, PyTorch}\hspace{42pt}{(Nov '21)}
-    \resumeSubItem{Autocorrect Implimetation GUI (funny name)}{Text editor with spell-checker, tabs, resource handling.}\hspace{-3pt}{(May-Aug '21)}
-    \resumeSubItem{Bank Mangment System}{a BMS with interactive UI rendering from scratch.}\hspace{135pt}{(May '20)}
-    \resumeSubItem{NotPing OnlyPong}{Pong game with rasterized graphics, GUI, in game tutorials, VFX, SFX, music, ester eggs and more. Tech: C++, Win32.}\hspace{382pt}{(Nov '20)}
-  \resumeSubHeadingListEnd
-\vspace{-5pt}
-%-----------Awards-----------------
-\section{Honors and Awards}
-\begin{description}[font=$\bullet$]
-\item {Won Club µCR Microcontroller Based Systems and Robotics Hub event Eximietas, 2019 }
-\end{description}
-\vspace{-6pt}
-\section{Volunteer Experience}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-        {NSS volunteer Oct 2019-20, jiit}{NOIDA, India}
-        {Helped out at NGOs, campaigns in interest of environment, blood donation, food distribution etc. }{} \\
-    % \vspace{10pt}\textbf{\large{Community Experience}}
-  \resumeSubHeadingListEnd
-\vspace{-6pt}
-\section{Courses undertaken}
-\begin{tabular}{p{0.33\textwidth}p{0.33\textwidth}p{0.33\textwidth}}
-    {Sentimental Analysis on textual data}&{Game Engines (Hazel, Kohi)}&{Procedural terrain Generation}\\
-    {C\# Unity Developer 2D, 3D}&{Games with go}&{Go Bootcamp, \textit{and many more}}\\
-\end{tabular}
-%\hline
-
+\sectionHeader \vspace{-5px}
+\begin{center}
+    \begin{tabularx}{.95\linewidth}{ p{0.3\linewidth} X }
+        \multicolumn{2}{l}{\sectionEducation} \\
+        % \hline
+        {\sectionAboutMe} & \vspace{-13px}\multirow{2}{*}{\sectionExperience} \\
+        % \cline{1-1}
+        {\sectionMainToolsAndTechnologies} & \\
+        % \hline
+        {\sectionOtherToolsAndTechnologies} & \vspace{-13px}\multirow{2}{*}{\sectionProjects} \\
+        % \cline{1-1}
+        {\sectionSoftTechnicalSkills} & \\
+        % \hline
+        {\sectionVolenteering} & {\sectionAwards} \\
+        % \hline
+    \end{tabularx}    
+\end{center}
+\sectionFooter
 \end{document}
