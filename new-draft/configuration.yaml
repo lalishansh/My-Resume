@@ -67,7 +67,7 @@ resume:
     - title: "Experience:"
       body: |
         ## 1. <!--raw-typst #text(red)[ Ubisoft India Studios ] -->
-          - **3D Programmer - On-Site** (Jun 2023 - Present, 1.5 yrs+) \
+          - **3D Programmer - On-Site** (Jun 2023 - Present, 1.5 yrs+)
             - Worked on **AP Monorepo** (of which AC Shadows and all the newer Anvil/Scimitar games are part of), understanding and documenting various parts of it etc.
             - Worked on **Map related** features of an Unannounced project involving mesh processing, post processing shader etc., optimizing the 2D pipeline for  art style of the **Living Map** feature including faster iteration times, terrain rendering, road/rail routes, building silhouettes, vegetation, water, and out of bounds areas etc designing completely different system to handle all that, camera, render passes etc and to automate their generation for artists. Also Optimized multiple aspects of rendering reducing wasted frame-times.
             - Currently deployed on **Skull and Bones** as part of quality pod maintaining graphics systems of the game.
