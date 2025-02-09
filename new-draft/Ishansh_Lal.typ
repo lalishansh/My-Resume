@@ -2,20 +2,20 @@
 #let src = yaml("configuration.yaml")
 
 #show link: set text(blue)
-#set page(margin: (x: 1.5cm, y: 1.6cm))
+#set page(margin: (x: 1.5cm, y: 1.8cm))
 #set text(
   // Default
   fill: black,
-  font: "Candara",//"Cambria Math", 
-  size: 8pt, 
+  font: "Cambria", 
+  size: 9pt, 
   style: "normal",
 )
 
 #let headlineSection = {[
   #place(top + right, dx: 3cm, dy: -10pt,
-    figure(box(image("assets/temp.jpg", fit: "cover", width: 2cm, height: 2cm), radius: 50%, clip: true)),
+    figure(box(image("../me-cropped.jpeg", fit: "cover", width: 2cm, height: 2cm), radius: 50%, clip: true)),
   )
-  #text(20pt)[#src.contacts.name] \ \
+  #text(20pt)[#smallcaps(src.contacts.name)] \ \
   #text(16pt)[#src.contacts.title]
 ]}
 
@@ -42,7 +42,7 @@
   #for section in sections {
     text(12pt, weight: "bold")[#section.title]
     linebreak()
-    cmarker.render(section.body)
+    cmarker.render(raw-typst: true, section.body)
   }
 ]}
 
@@ -51,7 +51,7 @@
   #for section in sections {
     text(12pt, weight: "bold")[#section.title]
     linebreak()
-    cmarker.render(section.body)
+    cmarker.render(raw-typst: true, section.body)
   }
 ]}
 

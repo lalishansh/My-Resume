@@ -1,5 +1,5 @@
 contacts:
-  name: ISHANSH LAL
+  name: Ishansh Lal
   avatar: "https://avatars.githubusercontent.com/u/47269217?v=4"
   title: Computer Graphics Engineer
   email: lalishansh@gmail.com 
@@ -14,7 +14,7 @@ contacts:
     - name: "GitHub"
       link: "github.com/lalishansh"
 cover-letter:
-  subject: Job Application for Software Development Engineer 2
+  subject_prefix: Job Application for
   body: |
     Creative and self-driven student with mindset to challenge complex problems and delivering quality, innovative design solutions. Skilled to traverse uncharted territories, from theories to implementation. Hands-on in transforming complex information and concepts into Logical, human/data-centered designs. Very Excited to work upon advance and future technology that grows my Field of view.
 resume:
@@ -24,24 +24,31 @@ resume:
         As a passionate and dedicated C++ Graphics Programmer, I excel in delivering high-quality, outcome-oriented solutions by focusing on the process and maintaining a positive attitude. My strong problem-solving and superb debugging skills, coupled with patience and adaptability, enable me to tackle complex challenges. Committed to writing clean and maintainable code, I take responsibility for my work and continuously strive for self-improvement.
     - title: "Education:"
       body: |
-        - Bachelor of Technology in Computer Science and Engineering - Jaypee Institute of Information Technology, NOIDA, India
+        - Bachelor of Technology in Computer Science and Engineering. <!--raw-typst #linebreak() -->
+          Jaypee Institute of Information Technology, NOIDA, India
     - title: "Languages:"
       body: |
         - English (Fluent)
         - Hindi (Native)
     - title: "Technologies:"
       body: |
-        - C++23, CMake, x86_64 Assembly, Python, Bash, PowerShell, C#-Scripting, Golang
-        - Vulkan, OpenGL, DirectX 12
+        <!--raw-typst #table(stroke: 0pt, inset: 3pt, columns: 3, 
+        [C++23], [CMake], [x86_64 Assembly], 
+        [Python], [Bash], [PowerShell], 
+        [Golang], [Antlr4], [C\#-Scripting], 
+        [Vulkan], [OpenGL], [DirectX 12]
+        ) -->
     - title: "Tools and softwares:"
       body: |
-        - Unity, Unreal Engine, Blender
-        - git, perforce, vcpkg
+        <!--raw-typst #table(stroke: 0pt, inset: 3pt, columns: 3, 
+        [Unity], [Unreal Engine], [Blender],
+        [git], [perforce], [vcpkg]
+        ) -->
     - title: "Technical Skills:"
       body: |
         - Rendering/Graphics Pipeline
         - CPU, GPU Architecture
-        - Engine Architecture and Optimizations
+        - Engine Architecture and Optimization
         - Acceleration Data Structures
         - 3D & Vector Mathematics
         - GPGPU Programming
@@ -53,34 +60,34 @@ resume:
         - Cross Platform Development
         - Automation Pipelines
         - Prompt Engineering
+    - title: "Award(s):"
+      body: |
+        - Won μCR, Microcontroller based System & Robotics Hub event Eximietas, 2019
   main:
     - title: "Experience:"
       body: |
-        ## 1. <!--raw-typst #text(purple)[ Viga Entertainment Studio (Internship + Remote) ] -->
-          - **Graphics Engineer Intern** (Oct 2021 - Apr 2022, 7 mos) \
-            Learned a lot as an Intern.
-            1. Mesh renement Optimizing No. of vertices in captured mesh then adding lost details using mean curvature. Multi-threading, real-time editable and disk caching.
-            2. Camera calibration Intrinsic-Extrinsic parameter estimation of cameras for face reconstruction with AprilTags.(Python)
-            3. Deploying scalable build systems CI/CD Ready, single step, cross platform build process with CMake, VcPkg, QT-5,6 support including a custom file-patcher for libraries and automatic dependencies resolution from servers.
-            4. Project architecting Planned architecture for "Scan Stage" and was praised for the same
-            5. Wand calibration for Motion capturing on synthetic dataset.
-          - **Graphics Engineer - Remote** (June 2022 - Aug 2022, 2+ mos) \
-            As part of the Core Team,
-            1. Creating Documentation for products
-            2. Speeding up Face Capture for Real-time Applications.
-            3. Code maintenance for multiple projects
-          - **Graphics Engineer - Remote** (Feb 2023 - May 2023, 4 mos) \
-            Conversion of video with depth data to 3D mesh/point-cloud for "volumetric streaming" between individuals using ZED cameras.
-        ## 2. <!--raw-typst #text(red)[ Ubisoft India Studios ] -->
-          - 3D Programmer (On-Site) (Jun 2023+, 1.5 yrs+) \
-            Handled backend multiple features of Map like 
-            - A thumbnail pipeline for point of interests to be rendered (in editor) onto texture atlas which gets serialized to be shown on map cutting a lot of render times.
+        ## 1. <!--raw-typst #text(red)[ Ubisoft India Studios ] -->
+          - **3D Programmer - On-Site** (Jun 2023 - Present, 1.5 yrs+) \
+            - Worked on **AP Monorepo** (of which AC Shadows and all the newer Anvil/Scimitar games are part of), understanding and documenting various parts of it etc.
+            - Worked on **Map related** features of an Unannounced project involving mesh processing, post processing shader etc., optimizing the 2D pipeline for  art style of the **Living Map** feature including faster iteration times, terrain rendering, road/rail routes, building silhouettes, vegetation, water, and out of bounds areas etc designing completely different system to handle all that, camera, render passes etc and to automate their generation for artists. Also Optimized multiple aspects of rendering reducing wasted frame-times.
+            - Currently deployed on **Skull and Bones** as part of quality pod maintaining graphics systems of the game.
+        ## 2. <!--raw-typst #text(purple)[ Viga Entertainment Studio ] -->
+          - **Graphics Engineer - Remote** (Feb 2023 - May 2023, 4 mos)
+            Conversion of video with depth data to 3D mesh/point-cloud for "volumetric streaming" between individuals using ZED cameras (to be deployed in ScanStage).
+          - **Graphics Engineer - Remote** (June 2022 - Aug 2022, 2+ mos)
+            Documenting products, their maintainence, improving/speeding-up sections of various programs i’ve previously worked upon inside ScanStage such as Face Capture etc.
+          - **Graphics Engineer Intern** (Oct 2021 - Apr 2022, 7 mos)
+            - Mesh refinement: Optimizing No. of vertices in captured mesh then adding lost details using mean curvature. Multi-threading, real-time editable and disk caching.
+            - Camera calibration Intrinsic-Extrinsic parameter estimation of cameras for face reconstruction with AprilTags.(Python)
+            - Deploying scalable build systems CI/CD Ready, single step, cross platform build process with CMake, VcPkg, QT-5,6 support including a custom file-patcher for libraries and automatic dependenciesresolution from servers.
+            - Project architecting Planned architecture for "Scan Stage" and was praised for the same
+            - Wand calibration for Motion capturing on synthetic dataset.
     - title: "Personal Projects:"
       body: |
-        - SETU Game Engine (major project): Cross platform (windows, Linux, Android), Cross API (OpenGL 4, GLES 3, DirectX 12), Modular. (C++, GLFW, Android Native, CMake)
-        - RayTracing-Tests (GPGPU-Accelerated) & OpenGL-TestSite: Framework for rapid prototyping of OpenGL, most notably used for GPU compute implementation of all 3 Peter Sherley's raytracing books.
-        - Particle Swarm Optimization algorithm Visualizer: GUI, MSDF font rendering from scratch using Vulkan and C++.
+        - **SETU Game Engine** (**major** project): Cross platform (windows, Linux, Android), Cross API (OpenGL 4, GLES 3, DirectX 12), Modular. (C++, GLFW, Android Native, CMake)
+        - **RayTracing-Tests** (**GPGPU-Accelerated**) & OpenGL-TestSite: Framework for rapid prototyping of OpenGL, most notably used for GPU compute implementation of all 3 Peter Sherley's raytracing books.
+        - **Particle Swarm Optimization algorithm Visualizer**: GUI, MSDF font rendering from scratch using Vulkan and C++.
+        - **Bank Management System**: Wrote the GUI (with 3D background) from scratch using OpenGL.
         - Scene perception for visually impaired and Live depression detection on Tweets (minor projects): Both Python based Computer Vision + AI/ML projects.
-        - Bank Management System: Wrote the GUI (with 3D background) from scratch using OpenGL.
-        - NotPing-OnlyPong: Pong game with raw rasterization graphics, GUI, VFX, SFX, music from scratch using only Win32 and C++.
-        - Courses: Game Engines(Hazel, Kohi); Procedural terrain Generation in Unity; C# Unity Developer 2D, 3D; Games with go.
+        - **NotPing-OnlyPong**: Pong game with raw rasterization graphics, GUI, VFX, SFX, music from scratch using only Win32 and C++.
+        - Courses: Game Engines(Hazel, Kohi); Procedural terrain Generation in Unity; C# Unity Developer 2D, 3D; Games with go, Go Bootcamp, and many more
