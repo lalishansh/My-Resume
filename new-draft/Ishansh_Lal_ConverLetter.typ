@@ -27,7 +27,7 @@
 )}
 
 #let signature(name) = {
-  text(font: "Segoe Print", src.contacts.name)
+  text(font: "Rockybilly", src.contacts.name)
 }
 
 #set page(
@@ -55,11 +55,9 @@
     linebreak(); linebreak()
 }
 
-Dear Hiring Manager,
+#dst.greeting,
 
-#cmarker.render(raw-typst: true, src.cover-letter.body)
-
-Thank you for considering my application. I look forward to the opportunity to discuss my qualifications further.
+#cmarker.render(raw-typst: true, src.cover-letter.body, scope: (company:() => dst.company))
 
 Sincerely,
 
