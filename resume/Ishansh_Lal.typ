@@ -22,8 +22,7 @@
 #let contactSection = {[
   #par(justify: true)[
     #let contacts = src.contacts
-
-    #grid(
+    #box(grid(
       columns: (auto, auto),
       gutter: 0.5em,
       align: (end, start),
@@ -32,34 +31,39 @@
       ..for other in contacts.others {
         (other.name + ":", link("https://" + other.link)[#other.link])
       }
-    )
-    #line(length: 100%)
+    ))
+    #box(line(length: 100%))
   ]
 ]}
 
 #let sidebarSection = {par(justify: true)[
   #let sections = src.resume.sidebar
   #for section in sections {
-    text(12pt, weight: "bold")[#section.title]
     linebreak()
-    cmarker.render(raw-typst: true, section.body)
+    text(12pt, weight: "bold")[#section.title]
+    box(v(15pt))
+    linebreak()
+    box(cmarker.render(raw-typst: true, section.body))
   }
 ]}
 
 #let mainSection = {par(justify: true)[
   #let sections = src.resume.main
   #for section in sections {
-    text(12pt, weight: "bold")[#section.title]
     linebreak()
-    cmarker.render(raw-typst: true, section.body)
+    text(12pt, weight: "bold")[#section.title]
+    box(v(15pt))
+    linebreak()
+    box(cmarker.render(raw-typst: true, section.body))
   }
 ]}
 
-#set rect(stroke: white)
+#set rect(stroke: none)
 #{
   grid(
     columns: (1fr, 2fr),
     column-gutter: 2em,
+    row-gutter: -15pt,
     rect[#contactSection], rect[#headlineSection],
     rect[#sidebarSection], rect[#mainSection]
   )
